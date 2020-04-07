@@ -3,7 +3,7 @@ package flamme.algorithm;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main {
+public class A202004072 {
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         int input = Integer.parseInt(in.readLine());
