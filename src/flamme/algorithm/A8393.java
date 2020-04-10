@@ -4,16 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class A8393 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int input = Integer.parseInt(br.readLine());
-        StringBuilder sb1 = new StringBuilder();
-        StringBuilder sb2 = new StringBuilder();
-        for(int i = input; i<input; --i) {
-            sb1.append("*");
+        int sum = 0;
+        for(int i =1; i<= input; i++){
+            sum += i;
         }
-        sb2.append(sb1+"\n");
-        System.out.println(sb2);
+        System.out.println(sum);
     }
 }
