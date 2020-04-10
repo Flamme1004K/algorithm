@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+
+//빠른 예제에서는 먼저 별과 "" 를 모두 10개를 찍고나서 후에 갯수로 subString을 이용해서 삭제시켜주었다.
+public class A2445 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int input = Integer.parseInt(br.readLine());
