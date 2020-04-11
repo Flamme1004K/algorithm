@@ -8,32 +8,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int input = Integer.parseInt(br.readLine());
-        StringBuilder builder = new StringBuilder();
-        StringBuilder builder2 = new StringBuilder();
-
-        for(int i=0; i<input; i++) {
-            String front = "";
-            String middle = "";
-            for(int j = 0; j<=i; j++){
-                front += "*";
-            }
-            for(int j = 0; j<(input*2)-(front.length()*2); j++) {
-                middle += " ";
-            }
-            builder.append(front+middle+front+"\n");
+        StringBuilder star = new StringBuilder();
+        StringBuilder blank = new StringBuilder();
+        StringBuilder result = new StringBuilder();
+        for(int i = 0; i < input; i++) {
+            star.append("*");
+            blank.append(" ");
         }
-
         for(int i = 1; i < input; i++) {
-            String front = "";
-            String middle = "";
-            for(int j = input-i; j>0; j--) {
-                front +="*";
-            }
-            for(int j = 1; j<= i*2; j++ ) {
-                middle += " ";
-            }
-            builder.append(front+middle+front+"\n");
+            result.append(blank.substring(i)+star.substring(0,i)+"\n");
         }
-        System.out.println(builder);
+        for(int i = 0; i < input; i++) {
+            result.append(blank.substring(0,i)+star.substring(i)+"\n");
+        }
+
+        System.out.println(result);
     }
 }
