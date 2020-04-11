@@ -1,11 +1,11 @@
-package flamme.algorithm;
+package flamme.algorithm.InOutStream;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class AplusB2 {
+public class AplusB5 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input = br.readLine();
@@ -18,7 +18,7 @@ public class AplusB2 {
             a.add(number1+number2);
         }
         for(int i=0; i<a.size(); i++){
-            System.out.println(a.get(i));
+            System.out.printf("Case #%d: %d\n",i+1,a.get(i));
         }
     }
 }

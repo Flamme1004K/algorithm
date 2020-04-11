@@ -1,17 +1,15 @@
-package flamme.algorithm;
+package flamme.algorithm.InOutStream;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class A8393 {
+public class A2741 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int input = Integer.parseInt(br.readLine());
-        int sum = 0;
-        for(int i =1; i<= input; i++){
-            sum += i;
+        for (int i=1; i<input+1; i++){
+            System.out.println(i);
         }
-        System.out.println(sum);
     }
 }

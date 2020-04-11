@@ -1,4 +1,4 @@
-package flamme.algorithm;
+package flamme.algorithm.InOutStream;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

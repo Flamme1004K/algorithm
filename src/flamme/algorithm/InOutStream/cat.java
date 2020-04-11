@@ -1,4 +1,4 @@
-package flamme.algorithm;
+package flamme.algorithm.InOutStream;
 
 public class cat {
     public static void main(String[] args) {
