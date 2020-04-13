@@ -16,12 +16,15 @@ public class A11726 {
         arr[1] = 1;
         if(input >1) arr[2] = 2;
         int result = 0;
-        if(input >2)  result = recursive(input, arr);
-        System.out.println(result%10007);
+        result = recursive(input, arr);
+        System.out.println(result);
     }
 
     private static int recursive(int input, int[] arr) {
-        arr[input] = recursive(input-1, arr) + recursive(input-2, arr);
+        if (arr[input] > 0) {
+            return arr[input];
+        }
+        if(input >2) arr[input] = (recursive(input-1, arr) + recursive(input-2, arr))%10007;
         return arr[input];
     }
     /*
