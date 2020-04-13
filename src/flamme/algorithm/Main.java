@@ -3,29 +3,26 @@ package flamme.algorithm;
 import java.io.*;
 
 public class Main {
+    private static int[] arr;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int input = Integer.parseInt(br.readLine());
+        arr = new int[input+1];
+        int result = recursive(input);
+        System.out.println(result);
+    }
 
-        int n = Integer.parseInt(br.readLine());
-        StringBuffer sb = new StringBuffer();
-
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < 2*n-1; j++) {
-                if(i == n-1) {
-                    sb.append("*");
-                } else {
-                    if (i + j == n - 1 || j - i == n - 1) {
-                        sb.append("*");
-                    } else {
-                        if(n-1 + i > j) {
-                            sb.append(" ");
-                        }
-                    }
-                }
-            }
-            sb.append("\n");
+    private static int recursive(int input) {
+        if (input >= 0 && input <= 2) {
+            arr[input] = input;
+            return arr[input];
+        }
+        if (arr[input] > 0) {
+            return arr[input];
         }
 
-        System.out.print(sb.toString());
+        arr[input] = (recursive(input-1) + recursive(input-2))%10007;
+
+        return arr[input];
     }
 }
