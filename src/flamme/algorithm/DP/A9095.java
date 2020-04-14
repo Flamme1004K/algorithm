@@ -1,9 +1,9 @@
-package flamme.algorithm;
+package flamme.algorithm.DP;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class A9095 {
     public static void main(String args[]) throws IOException {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
