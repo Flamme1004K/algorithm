@@ -3,31 +3,30 @@ package flamme.algorithm;
 import java.io.*;
 
 public class Main {
-    public static void main(String args[])throws IOException{
+    static int dp[][] ;
+
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        long d[][] = new long[n+1][10];
-        long mod = 1000000000;
-        for (int i = 1; i <=9; i++){
-            d[1][i] = 1;
-        }
-        for (int i = 2; i <= n; i++){
-            for (int j = 0; j <= 9; j++){
-                d[i][j] = 0;
-                if (j-1 >= 0){
-                    d[i][j] += d[i-1][j-1];
+        int input = Integer.parseInt(br.readLine());
+        dp = new int [input+1][10];
+
+        dp[1][0] = dp[1][1] =dp[1][2] = dp[1][3] =dp[1][4] = dp[1][5] =dp[1][6] = dp[1][7] =dp[1][8] = dp[1][9] =1;
+
+        for(int i=2;i<=input;i++) {
+            for(int j=0;j<10;j++) {
+                for(int k=0;k<=j;k++) {
+                    dp[i][j] += dp[i-1][k];
                 }
-                if (j+1 <= 9){
-                    d[i][j] += d[i-1][j+1];
-                }
-                d[i][j] %= mod;
+                dp[i][j] %= 10007;
             }
+
         }
-        long ans = 0;
-        for (int i = 0; i <= 9; i++){
-            ans += d[n][i];
+
+        int sum = 0;
+        for(int i=0;i<10;i++) {
+            sum+=dp[input][i];
         }
-        ans %= mod;
-        System.out.println(ans);
+
+        System.out.println(sum % 10007);
     }
 }
