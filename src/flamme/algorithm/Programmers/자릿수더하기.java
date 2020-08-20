@@ -30,7 +30,7 @@ public class 자릿수더하기 {
         System.out.println(solution(Integer.parseInt(sc.readLine())));
     }
 
-    public static int solution(int n) {
+   public static int solution(int n) {
         String answer = Integer.toString(n);
         String data[] = answer.split("");
         int sum = 0;
