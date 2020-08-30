@@ -14,9 +14,8 @@ public class 가운데글자가져오기 {
     }
 
     public static String solution(String s) {
-        String answer = "";
+        String answer ="";
         int a = s.length()/2;
-        System.out.println(a);
-        return answer;
+        return s.length()%2 ==0 ?s.split("")[a-1] + s.split("")[a] : s.split("")[a];
     }
 }
