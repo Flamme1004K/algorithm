@@ -2,9 +2,7 @@ package flamme.algorithm.Programmers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 /*
 
@@ -29,17 +27,15 @@ public class 실패율 {
     public static void main(String[] args) throws Exception {
         BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
 
-        int[] arrayString =  {4,4,4,4,4};
+        int[] arrayString =  {1,1,1,1,1,1,1,1};
 
-        solution(4, arrayString);
+        solution(5, arrayString);
     }
 
     public static int[] solution(int N, int[] stages) {
-        Arrays.sort(stages);
         int fail = stages.length;
-        float rate;
-
-        float[][] result = new float[N][2];
+        double rate;
+        double[][] result = new double[N][2];
 
         int[] answer = new int[N];
 
@@ -50,12 +46,15 @@ public class 실패율 {
                 }
             }
             rate = (float)answer[i-1]/fail;
+            if(Double.isNaN(rate)){
+                rate = 0;
+            }
             System.out.println("answer = " + i +" result = " + rate);
             result[i-1][0] = rate;
             result[i-1][1] = i;
             fail -= answer[i-1];
         }
-        Arrays.sort(result, Collections.reverseOrder((a, b) -> Float.compare(a[0], b[0])));
+        Arrays.sort(result, Collections.reverseOrder(Comparator.comparingDouble(a -> a[0])));
 
         for (int i = 0; i<result.length; i++) {
             answer[i] = (int) result[i][1];
