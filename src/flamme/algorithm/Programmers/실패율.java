@@ -45,6 +45,8 @@ public class 실패율 {
                     answer[i - 1]++;
                 }
             }
+            //Double 0.0은 나눌수 없으므로 NaN이 나온다. 그러므로
+            //NaN체크를 해줘서 0으로 만들어줘야 한다.gg
             rate = (float)answer[i-1]/fail;
             if(Double.isNaN(rate)){
                 rate = 0;
