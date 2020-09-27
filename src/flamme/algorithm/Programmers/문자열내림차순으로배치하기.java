@@ -28,11 +28,6 @@ public class 문자열내림차순으로배치하기 {
     public static String solution(String s) {
         String[] strings = s.split("");
         Arrays.sort(strings, Collections.reverseOrder());
-        String answer = "";
-        for (String s1: strings
-             ) {
-            answer += s1;
-        }
-        return answer;
+        return String.join("",strings);
     }
 }
