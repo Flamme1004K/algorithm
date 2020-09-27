@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 /*
@@ -20,14 +22,14 @@ public String reverseStr(String str){
 
  */
 public class 문자열내림차순으로배치하기 {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {√
         BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(solution(sc.readLine()));
     }
 
     public static String solution(String s) {
-        String[] strings = s.split("");
-        Arrays.sort(strings, Collections.reverseOrder());
-        return String.join("",strings);
+        return Stream.of(s.split(""))
+                .sorted(Collections.reverseOrder())
+                .collect(Collectors.joining());
     }
 }
