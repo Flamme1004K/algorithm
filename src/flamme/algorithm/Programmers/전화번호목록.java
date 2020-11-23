@@ -32,7 +32,7 @@ public class 전화번호목록 {
         System.out.println(solution(arrayString));
 
     }
-    // clean 하네요 우왕
+    
     private static boolean solution(String[] phoneBook) {
         return checkDuplicatePhoneNumber(phoneBook);
 
