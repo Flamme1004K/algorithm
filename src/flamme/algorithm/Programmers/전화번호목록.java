@@ -1,12 +1,6 @@
 package flamme.algorithm.Programmers;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * 문제 설명
@@ -32,7 +26,7 @@ public class 전화번호목록 {
         System.out.println(solution(arrayString));
 
     }
-    // clean 하네요 우왕
+
     private static boolean solution(String[] phoneBook) {
         return checkDuplicatePhoneNumber(phoneBook);
 
